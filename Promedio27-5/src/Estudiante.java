@@ -24,4 +24,19 @@ public class Estudiante {
     public double[] getNotas() {
         return notas;
     }
+
+    //metodos
+    public double calcularPromedio(){
+        double promedio = notas[0] + notas[1] + notas[2] + notas[3] + notas[4];
+        return promedio;
+    }
+
+    public boolean aprobado(){
+        if(calcularPromedio()>=70){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }
