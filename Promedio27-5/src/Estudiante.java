@@ -3,6 +3,24 @@ public class Estudiante {
     private String matricula;
     private double [] notas = new double [5];
 
+        //Getters
+    public String getNombre() {
+        return nombre;
+    }
+    public String getMatricula() {
+        return matricula;
+    }
+    public double[] getNotas(int i) {
+        while(i<5){
+            String[]calf = new String[5];
+            calf[i]= JOptionPane.showInputDialog("Ingrese la nota de la materia " + (i+1));
+            notas[i] = Double.parseDouble(calf[i]);
+            i++;
+        }
+        return notas;
+    }
+
+
     //Setters
     public void setNombre(String nombre) {
         this.nombre = nombre;
@@ -11,28 +29,12 @@ public class Estudiante {
         this.matricula = matricula;
     }
     public void setNotas(double [] notas) {
-        System.out.println("Ingrese las notas de la materia 1\n");
-        this.notas[0] = notas[0];
-        System.out.println("Ingrese las notas de la materia 2\n");
-        this.notas[1] = notas[1];
-        System.out.println("Ingrese las notas de la materia 3\n");
-        this.notas[2] = notas[2];
-        System.out.println("Ingrese las notas de la materia 4\n");
-        this.notas[3] = notas[3];
-        System.out.println("Ingrese las notas de la materia 5\n");
-        this.notas[4] = notas[4];
+        int i = 0;
+        while(i<5){
+            this.notas[i] = notas[i];
+            i++;
         }
-
-    //Getters
-    public String getNombre() {
-        return nombre;
-    }
-    public String getMatricula() {
-        return matricula;
-    }
-    public double[] getNotas() {
-        return notas;
-    }
+        }
 
     //metodos
     public double calcularPromedio(){
