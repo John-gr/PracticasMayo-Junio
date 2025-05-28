@@ -5,19 +5,13 @@ public class Estudiante {
 
         //Getters
     public String getNombre() {
-        return nombre;
+        return this.nombre;
     }
     public String getMatricula() {
-        return matricula;
+        return this.matricula;
     }
-    public double[] getNotas(int i) {
-        while(i<5){
-            String[]calf = new String[5];
-            calf[i]= JOptionPane.showInputDialog("Ingrese la nota de la materia " + (i+1));
-            notas[i] = Double.parseDouble(calf[i]);
-            i++;
-        }
-        return notas;
+    public double[]getNota(int i) {
+        return this.notas;
     }
 
 
@@ -36,9 +30,13 @@ public class Estudiante {
         }
         }
 
+        public void setNota(int i, double nota) {
+                this.notas[i] = nota;
+        }
+
     //metodos
     public double calcularPromedio(){
-        double promedio = notas[0] + notas[1] + notas[2] + notas[3] + notas[4];
+        double promedio = (notas[0] + notas[1] + notas[2] + notas[3] + notas[4])/5;
         return promedio;
     }
 
