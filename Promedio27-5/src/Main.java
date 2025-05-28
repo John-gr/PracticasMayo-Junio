@@ -8,5 +8,8 @@ public class Main {
         promedio.setNota(2, 85);
         promedio.setNota(3, 75);
         promedio.setNota(4, 95);
+        System.out.printf("Nombre:"+promedio.getNombre()+"\n");
+        System.out.println("Matricula:"+promedio.getMatricula()+"\n");
+        System.out.println("Promedio:"+ promedio.calcularPromedio()+"\n");
     }
 }
