@@ -11,5 +11,10 @@ public class Main {
         System.out.printf("Nombre:"+promedio.getNombre()+"\n");
         System.out.println("Matricula:"+promedio.getMatricula()+"\n");
         System.out.println("Promedio:"+ promedio.calcularPromedio()+"\n");
+        if (promedio.aprobado()== true) {
+            System.out.println("El estudiante ha aprobado.");
+        } else {
+            System.out.println("El estudiante no ha aprobado.");
+        }
     }
 }
