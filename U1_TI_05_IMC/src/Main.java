@@ -13,5 +13,13 @@ public class Main {
         System.out.println("Ingrese su peso");
         Scanner sc2 = new Scanner(System.in);
         double peso=sc.nextDouble();
+
+        Persona persona = new Persona();
+        persona.setNombre(nombre);
+        persona.setAltura(altura);
+        persona.setPeso(peso);
+
+        System.out.println("Su IMC:"+persona.calcularIMC());
+        System.out.println("Clasificado como:"+persona.clasificarIMC());
     }
 }
