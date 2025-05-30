@@ -26,4 +26,10 @@ public class Persona {
     public void setPeso(double peso) {
         this.peso = peso;
     }
+
+    //Metodos
+    public double calcularIMC(){
+        double IMC=peso/(altura*altura);
+        return IMC;
+    }
 }
