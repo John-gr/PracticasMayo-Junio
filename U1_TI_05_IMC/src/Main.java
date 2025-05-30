@@ -19,7 +19,7 @@ public class Main {
         persona.setAltura(altura);
         persona.setPeso(peso);
 
-        System.out.println("Su IMC:"+persona.calcularIMC());
+        System.out.println("Su IMC:%"+String.format(".2f", persona.calcularIMC()));
         System.out.println("Clasificado como:"+persona.clasificarIMC());
     }
 }
