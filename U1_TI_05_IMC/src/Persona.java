@@ -29,7 +29,24 @@ public class Persona {
 
     //Metodos
     public double calcularIMC(){
-        double IMC=peso/(altura*altura);
-        return IMC;
+        double imc=peso/(altura*altura);
+        return imc;
+    }
+
+    public String clasificarIMC(){
+        String valor="";
+        if(calcularIMC()<18.5){
+            valor="Bajo peso";
+        }
+        else if(calcularIMC()>18.5&&calcularIMC()<24.9){
+            valor="Normal";
+        }
+        else if(calcularIMC()>24.9&&calcularIMC()<29.9){
+            valor="Sobrepeso";
+        }
+        else {
+            valor="Obesidad";
+        }
+        return valor;
     }
 }
