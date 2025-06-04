@@ -5,5 +5,10 @@ public class Main {
         String nombre=sc.nextLine();
         System.out.println("Ingrese su contraseña");
         String password=sc.nextLine();
+
+        UsuarioSeguro usuario=new UsuarioSeguro();
+        usuario.setNombreUsuario(usuario);
+        usuario.setPassword(password);
+        System.out.println(usuario.nombreUsuario()+usuario.password());
     }
 }
