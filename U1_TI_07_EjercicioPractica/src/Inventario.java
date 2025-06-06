@@ -32,5 +32,22 @@ public class Inventario {
         return false;
     }
 
-    pub
+    public Producto buscar(String codigo){
+        for(int i=0;i<this.producto.length;i++) {
+            if(this.producto[i].getCodigo().equals(codigo)) {
+                return this.producto[i];
+            }
+        }
+        return null;
+    }
+
+    public int totalItems(){
+        int total=0;
+        for(int i=0;i<this.producto.length;i++) {
+            if(this.producto[i]!=null) {
+                total+=this.producto[i].getCantidad();
+            }
+        }
+        return total;
+    }
 }
