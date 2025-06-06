@@ -16,7 +16,15 @@ public class Producto {
     }
 
     public void setCodigo(String codigo){
-        this.codigo=codigo;
+        if(codigo==null){
+            System.out.println("Ingrese un codigo valido");
+        }
+        else if(codigo.isEmpty()){
+            System.out.println("Ingrese un codigo valido");
+        }
+        else{
+            this.codigo=codigo;
+        }
     }
 
     public void setName(String nombre){
