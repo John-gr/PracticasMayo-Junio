@@ -40,4 +40,10 @@ public class Producto {
         }
     }
 
+    public void setProducto(String nombre,String codigo,int cantidad) {
+        setName(nombre);
+        setCodigo(codigo);
+        setCantidad(cantidad);
+    }
+
 }
