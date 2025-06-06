@@ -32,7 +32,12 @@ public class Producto {
     }
 
     public void setCantidad(int cantidad){
-        this.cantidad=cantidad;
+        if(cantidad<=0){
+            System.out.println("Ingrese un cantidad valida");
+        }
+        else {
+            this.cantidad=cantidad;
+        }
     }
 
 }
