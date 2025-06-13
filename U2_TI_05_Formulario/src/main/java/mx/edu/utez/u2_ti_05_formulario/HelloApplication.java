@@ -20,11 +20,19 @@ public class HelloApplication extends Application {
         TextField tfEdad = new TextField();
         ObservableList<String> roles = FXCollections.observableArrayList("Profesor","Estudiante","Admin");
         ComboBox<String> cbRoles = new ComboBox<>(roles);
+        Button btnCrear = new Button("Crear");
+        Button btnReset = new Button("Reset");
+        Label lblResultado = new Label("Resultado");
 
+        btnCrear.setOnAction(e ->{
+            if(lblNombre.isEmpty || lblEdad.isEmpty || lblApellido.isEmpty || cbRoles.isEmpty){
+                lblResultado.setText("Error, no campos vacios");
+            } else{
+                
+            }
 
+        });
 
-        Button button = new Button("Aceptar");
-        Button button2 = new Button("Cancelar");
         stage.setTitle("Formulario");
         stage.setScene(scene);
         stage.show();
