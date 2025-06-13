@@ -18,7 +18,6 @@ import java.io.IOException;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
 
         //Datos personales
         Label lblNombre = new Label("Nombre");
@@ -31,20 +30,53 @@ public class HelloApplication extends Application {
         ComboBox<String> cbRoles = new ComboBox<>(roles);
         Button btnCrear = new Button("Crear");
         Button btnReset = new Button("Reset");
-        Label lblResultado = new Label("Resultado");
+        Label lblResultado = new Label("");
+        Label lblRol = new Label("Rol");
 
         GridPane root = new GridPane();
         root.setAlignment(Pos.CENTER);
+        root.setHgap(10);
+        root.setVgap(10);
+        root.add(lblNombre, 0, 0);
+        root.add(tfNombre, 1, 0);
+        root.add(lblApellido, 0, 1);
+        root.add(tfApellido, 1, 1);
+        root.add(lblEdad, 0, 2);
+        root.add(tfEdad, 1, 2);
+        root.add(lblRol, 0, 3);
+        root.add(cbRoles, 1, 3);
+        root.add(btnCrear, 1, 4);
+        root.add(btnReset, 2, 4);
+        root.add(lblResultado, 0, 6);
 
-        btnCrear.setOnAction(e ->{
-            if(lblNombre.isEmpty || lblEdad.isEmpty || lblApellido.isEmpty || cbRoles.isEmpty){
+        btnCrear.setOnAction(e -> {
+            String nombre = tfNombre.getText();
+            String apellido = tfApellido.getText();
+            String edad = tfEdad.getText();
+            String rol = cbRoles.getSelectionModel().getSelectedItem();
+
+            if(nombre.isEmpty() || apellido.isEmpty()|| edad.isEmpty()){
                 lblResultado.setText("Error, no campos vacios");
-            } else{
-
+                lblResultado.setStyle("-fx-text-fill: red;");
+            } else {
+                lblResultado.setText("Su nombre es: " + nombre+"Apellido es: "+apellido+"edad es: "+edad+"Rol:"+rol);
+                lblResultado.setStyle("-fx-background-color: lightblue");
+                root.setStyle("-fx-background-color: lightgreen");
             }
 
         });
 
+
+        btnReset.setOnAction(e->{
+            tfNombre.clear();
+            tfApellido.clear();
+            tfEdad.clear();
+            cbRoles.getSelectionModel().clearSelection();
+            cbRoles.getItems().clear();
+            root.setStyle("-fx-background-color: white");
+            lblResultado.setText("");
+        });
+        Scene scene = new Scene(root,600,550);
         stage.setTitle("Formulario");
         stage.setScene(scene);
         stage.show();
