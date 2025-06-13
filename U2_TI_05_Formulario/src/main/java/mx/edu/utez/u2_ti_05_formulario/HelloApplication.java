@@ -11,7 +11,18 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-        Label lbl1 = new Label("Label 1");
+        //Datos personales
+        Label lblNombre = new Label("Nombre");
+        TextField tfNombre = new TextField();
+        Label lblApellido = new Label("Apellido");
+        TextField tfApellido = new TextField();
+        Label lblEdad = new Label("Edad");
+        TextField tfEdad = new TextField();
+        ObservableList<String> roles = FXCollections.observableArrayList("Profesor","Estudiante","Admin");
+        ComboBox<String> cbRoles = new ComboBox<>(roles);
+
+
+
         Button button = new Button("Aceptar");
         Button button2 = new Button("Cancelar");
         stage.setTitle("Formulario");
