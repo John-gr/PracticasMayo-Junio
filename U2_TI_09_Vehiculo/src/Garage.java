@@ -4,15 +4,12 @@ public class Garage {
     public Garage(int numEspacios){
         this.vehiculos=new Vehiculo[numEspacios];
     }
+
     public boolean estacionar(Vehiculo vehiculo){
         for(int i=0;i<this.vehiculos.length;i++){
             if(vehiculos[i]==null){
                 vehiculos[i]=vehiculo;
                 return true;
-            }
-            else {
-                System.out.println("Ya esta lleno");
-                return false;
             }
         }
         return false;
