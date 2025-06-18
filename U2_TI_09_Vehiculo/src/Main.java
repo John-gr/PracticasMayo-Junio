@@ -13,5 +13,6 @@ public class Main {
         System.out.println("El conteo de vehiculos es:"+garage.contarVehiculos());
         garage.retirar(carro2.getPlaca());
         System.out.println("El nuevo conteo de vehiculos es:"+garage.contarVehiculos());
+        //correccion de usuario
     }
 }
