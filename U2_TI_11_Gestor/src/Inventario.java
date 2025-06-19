@@ -15,5 +15,33 @@ public class Inventario {
         return false;
     }
 
+    public boolean eliminarProducto(String codigo){
+        for(int i=0;i<this.prod.length;i++){
+            if(codigo.equals(this.prod[i].getCodigo())){
+                this.prod[i]=null;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Producto buscar(String codigo){
+        for(int i=0;i<this.prod.length;i++){
+            if(codigo.equals(this.prod[i].getCodigo())){
+                return this.prod[i];
+            }
+        }
+        return null;
+    }
+
+    public int totalItems(){
+        int contador=0;
+        for(int i=0;i<this.prod.length;i++){
+            if(this.prod[i]!=null){
+                contador++;
+            }
+        }
+        return contador;
+    }
 
 }
