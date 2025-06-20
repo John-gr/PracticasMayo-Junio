@@ -1,7 +1,7 @@
 public class Inventario {
     private Producto[] prod;
 
-    public void tamañoProducto (int tamaño){
+    public Inventario (int tamaño){
         this.prod=new Producto[tamaño];
     }
 
@@ -9,9 +9,11 @@ public class Inventario {
         for (int i=0;i<this.prod.length;i++){
             if(this.prod[i]==null){
                 this.prod[i]=p;
+                System.out.println("Se agrego correctamente");
                 return true;
             }
         }
+        System.out.println("Error al agregar");
         return false;
     }
 
@@ -19,6 +21,7 @@ public class Inventario {
         for(int i=0;i<this.prod.length;i++){
             if(codigo.equals(this.prod[i].getCodigo())){
                 this.prod[i]=null;
+                System.out.println("Se elimino correctamente");
                 return true;
             }
         }

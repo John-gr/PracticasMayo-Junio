@@ -3,6 +3,12 @@ public class Producto {
     private String nombre;
     private int cantidad;
 
+    public Producto(String codigo, String nombre, int cantidad){
+        this.codigo=codigo;
+        this.nombre=nombre;
+        this.cantidad=cantidad;
+    }
+
     public String getCodigo() {
         return codigo;
     }
